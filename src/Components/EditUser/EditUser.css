@@ -1,0 +1,17 @@
+.EditUser {
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  padding: auto;
+}

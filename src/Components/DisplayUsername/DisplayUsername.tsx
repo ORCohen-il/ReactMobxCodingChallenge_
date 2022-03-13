@@ -13,7 +13,6 @@ function DisplayUsername(props: DisplayUsernameProps): JSX.Element {
   );
 
   useEffect(() => {
-
     //component Did Mount
     const unsubscribe = store.subscribe(() => {
       setUsers([...store.getState().usersState.users]);
@@ -35,6 +34,7 @@ function DisplayUsername(props: DisplayUsernameProps): JSX.Element {
         <thead className="text-center">
           <tr>
             <th>#</th>
+            <th>Username</th>
             <th>ID</th>
             <th>Name</th>
             <th>Gender</th>
@@ -48,6 +48,18 @@ function DisplayUsername(props: DisplayUsernameProps): JSX.Element {
             return [
               <tr key={i}>
                 <td>{i}</td>
+                <td>
+                  {" "}
+                  {user
+                    .name!.toString()
+                    .charAt(0)
+                    .toUpperCase()}
+                  {user
+                    .name!.toString()
+                    .substring(1, 10)
+                    .toLowerCase()}
+                  {user.age}{" "}
+                </td>
                 <td>{user.id}</td>
                 <td>
                   {" "}
